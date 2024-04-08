@@ -1,0 +1,25 @@
+syntax = "proto3";
+package homegateway;
+
+option go_package = "hmp-api-embedded-go/proto/homegatewayservice";
+
+service HomeGateway {
+  rpc GetDeviceInfo(EmptyRequest) returns (DeviceInfo);
+}
+
+message EmptyRequest {
+  // empty request
+}
+
+message DeviceInfo {
+    string type = 1;
+    string id  = 2;
+    string manufacturerOUI = 3;
+    string manufacturer  = 4;
+    string modelName = 5;
+    string serialNumber = 6;
+    string productClass = 7;
+    string softwareVersion = 8;
+    string hardwareVersion = 9;
+    string statusLastChange = 10;
+}
