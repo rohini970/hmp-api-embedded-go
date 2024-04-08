@@ -16,7 +16,7 @@ ENV PATH=$PATH:$GOPATH/bin:/opt/protoc/bin
 
 # Copy the grpc proto file and generate the go module
 RUN mkdir -p /go/src/hmp-api-embedded-go
-COPY helloworld.proto /go/src/hmp-api-embedded-go
+COPY homegateway.proto /go/src/hmp-api-embedded-go
 RUN cd /go/src && \
     protoc -I hmp-api-embedded-go/ hmp-api-embedded-go/homegateway.proto --go_out=plugins=grpc:hmp-api-embedded-go
 
