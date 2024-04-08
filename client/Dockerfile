@@ -22,6 +22,6 @@ RUN cd /go/src && \
 
 # Copy the project to be executed
 RUN mkdir -p /go/src/grpc-client 
-COPY main.go /go/src/grpc-client
+COPY client.go /go/src/grpc-client
 
 ENTRYPOINT cd /go/src/grpc-client && go run client.go
